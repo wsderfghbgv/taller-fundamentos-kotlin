@@ -3,41 +3,30 @@ package ejercicios
 fun ejecutarBloque5() {
     println("\n=== BLOQUE 5: FUNCIONES ===")
 
-    // Ejercicio 1
-    saludar("Camila")
+    // Ejercicio 21 — saludo que devuelve String
+    val mensajeSaludo = saludar("Camila")
+    println("21) $mensajeSaludo")
 
-    // Ejercicio 2
-    val suma = sumar(10, 15)
-    println("2) Suma: $suma")
+    // Ejercicio 22 — suma en una sola línea
+    val total = sumar(10, 15)
+    println("22) Suma: $total")
 
-    // Ejercicio 3
-    val area = areaRectangulo(5.0, 2.5)
-    println("3) area del rectangulo: $area")
+    // Ejercicio 23 y 24 — rectángulo con alto por defecto y solo ancho nombrado
+    val areaDefault = crearRectangulo(ancho = 6.0)
+    println("23-24) Área rectángulo (alto por defecto): $areaDefault")
 
-    // Ejercicio 4
-    val par = esPar(11)
-    println("4) 11 es par?: $par")
+    val areaCompleta = crearRectangulo(ancho = 5.0, alto = 3.0)
+    println("23) Área rectángulo (ancho y alto): $areaCompleta")
 
-    // Ejercicio 5
-    imprimirPerfil(nombre = "Luis", edad = 20, ciudad = "Bogota")
+    // Ejercicio 25 — conversor
+    val millas = kmAMillas(10.0)
+    println("25) 10 km ≈ $millas millas")
 }
 
-fun saludar(nombre: String) {
-    println("1) Hola, $nombre")
-}
+fun saludar(nombre: String): String = "Hola $nombre"
 
-fun sumar(a: Int, b: Int): Int {
-    return a + b
-}
+fun sumar(a: Int, b: Int): Int = a + b
 
-fun areaRectangulo(base: Double, altura: Double): Double {
-    return base * altura
-}
+fun crearRectangulo(ancho: Double, alto: Double = 1.0): Double = ancho * alto
 
-fun esPar(numero: Int): Boolean {
-    return numero % 2 == 0
-}
-
-fun imprimirPerfil(nombre: String, edad: Int, ciudad: String = "No definida") {
-    println("5) Perfil -> Nombre: $nombre, Edad: $edad, Ciudad: $ciudad")
-}
+fun kmAMillas(kilometros: Double): Double = kilometros * 0.621371

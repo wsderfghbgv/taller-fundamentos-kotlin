@@ -3,44 +3,49 @@ package ejercicios
 fun ejecutarBloque3() {
     println("\n=== BLOQUE 3: CONDICIONALES ===")
 
-    // Ejercicio 1
-    val nota = 4.2
-    if (nota >= 3.0) {
-        println("1) Aprobado con $nota")
+    // Ejercicio 11 — Mayoría de edad / votar
+    val edad = 19
+    if (edad >= 18) {
+        println("11) Puede votar (mayor de edad: $edad)")
     } else {
-        println("1) Reprobado con $nota")
+        println("11) No puede votar (menor de edad: $edad)")
     }
 
-    // Ejercicio 2
-    val numero = 7
-    val tipo = if (numero % 2 == 0) "par" else "impar"
-    println("2) El numero $numero es $tipo")
+    // Ejercicio 12 — if como expresión: Aprobado / Reprobado según nota
+    val nota = 4.2
+    val resultado = if (nota >= 3.0) "Aprobado" else "Reprobado"
+    println("12) Resultado: $resultado (nota $nota)")
 
-    // Ejercicio 3
-    val dia = 3
-    val nombreDia = when (dia) {
-        1 -> "Lunes"
-        2 -> "Martes"
-        3 -> "Miercoles"
-        4 -> "Jueves"
-        5 -> "Viernes"
-        6, 7 -> "Fin de semana"
-        else -> "Dia invalido"
+    // Ejercicio 13 — Semáforo
+    val color = "rojo"
+    val accion = when (color) {
+        "rojo" -> "Pare"
+        "amarillo" -> "Precaución"
+        "verde" -> "Siga"
+        else -> "Color no válido"
     }
-    println("3) Dia: $nombreDia")
+    println("13) Semáforo ($color): $accion")
 
-    // Ejercicio 4
-    val edad = 17
-    when {
-        edad < 12 -> println("4) Niño")
-        edad < 18 -> println("4) Adolescente")
-        edad < 60 -> println("4) Adulto")
-        else -> println("4) Adulto mayor")
+    // Ejercicio 14 — Rangos de temperatura
+    val temperatura = 22.0
+    val sensacion = when {
+        temperatura < 15.0 -> "Frío"
+        temperatura in 15.0..25.0 -> "Templado"
+        else -> "Calor"
     }
+    println("14) Temperatura $temperatura °C: $sensacion")
 
-    // Ejercicio 5
-    val usuario = "admin"
-    val clave = "1234"
-    val acceso = usuario == "admin" && clave == "1234"
-    println("5) Acceso permitido?: $acceso")
+    // Ejercicio 15 — Verificación de tipo con when + is
+    val muestraA: Any = "Hola Kotlin"
+    val muestraB: Any = 42
+    when (muestraA) {
+        is String -> println("15a) Es un String: ${muestraA.length} caracteres")
+        is Int -> println("15a) Es un Int")
+        else -> println("15a) Otro tipo")
+    }
+    when (muestraB) {
+        is String -> println("15b) Es un String")
+        is Int -> println("15b) Es un Int: $muestraB")
+        else -> println("15b) Otro tipo")
+    }
 }

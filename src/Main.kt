@@ -1,4 +1,9 @@
-import ejercicios.*
+import ejercicios.ejecutarBloque1
+import ejercicios.ejecutarBloque2
+import ejercicios.ejecutarBloque3
+import ejercicios.ejecutarBloque4
+import ejercicios.ejecutarBloque5
+import ejercicios.ejecutarBloque6
 
 fun main() {
     println("INICIANDO TALLER DE KOTLIN")
@@ -12,4 +17,3 @@ fun main() {
 
     println("FIN DEL TALLER")
 }
-

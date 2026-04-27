@@ -3,25 +3,33 @@ package ejercicios
 fun ejecutarBloque6() {
     println("\n=== BLOQUE 6: COLECCIONES ===")
 
-    // Ejercicio 1
-    val frutas = listOf("Manzana", "Banano", "Mango")
-    println("1) Lista de frutas: $frutas")
+    // Ejercicio 26 — lista de compras mutable: añadir y eliminar
+    val compras = mutableListOf("leche", "pan", "huevos")
+    println("26) Lista inicial: $compras")
+    compras.add("arroz")
+    compras.remove("pan")
+    println("26) Tras add y remove: $compras")
 
-    // Ejercicio 2
-    val numeros = mutableListOf(1, 2, 3)
-    numeros.add(4)
-    numeros.add(5)
-    println("2) Lista mutable: $numeros")
+    // Ejercicio 27 — precios menores a 50
+    val precios = mutableListOf(120.0, 35.5, 49.99, 10.0, 75.0)
+    val preciosBajos = precios.filter { it < 50.0 }
+    println("27) Precios menores a 50: $preciosBajos")
 
-    // Ejercicio 3
-    val mayoresQueDos = numeros.filter { it > 2 }
-    println("3) Filtrados (>2): $mayoresQueDos")
+    // Ejercicio 28 — find: primer nombre que empieza por 'A'
+    val amigos = listOf("Luis", "Andrea", "Carlos", "Ana")
+    val encontrado = amigos.find { it.startsWith("A") }
+    println("28) Primer amigo con A: $encontrado")
 
-    // Ejercicio 4
-    val cuadrados = numeros.map { it * it }
-    println("4) Cuadrados: $cuadrados")
+    // Ejercicio 29 — extensión Int.esNegativo()
+    val x = -3
+    val y = 5
+    println("29) $x es negativo: ${x.esNegativo()} | $y es negativo: ${y.esNegativo()}")
 
-    // Ejercicio 5
-    val notas = mapOf("Ana" to 4.5, "Luis" to 3.8, "Marta" to 4.9)
-    println("5) Nota de Marta: ${notas["Marta"]}")
+    // Ejercicio 30 — extensión String.quitarEspacios()
+    val texto = "  hola   mundo  "
+    println("30) Sin espacios: '${texto.quitarEspacios()}'")
 }
+
+fun Int.esNegativo(): Boolean = this < 0
+
+fun String.quitarEspacios(): String = this.replace(" ", "")

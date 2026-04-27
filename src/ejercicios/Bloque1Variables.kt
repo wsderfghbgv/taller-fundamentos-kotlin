@@ -1,29 +1,37 @@
 package ejercicios
 
+private const val ANIO_NACIMIENTO = 2002
+private const val ANIO_ACTUAL = 2026
+
+object Constants {
+    const val VELOCIDAD_LUZ = 299_792_458L
+}
+
 fun ejecutarBloque1() {
     println("\n=== BLOQUE 1: VARIABLES ===")
 
-    // Ejercicio 1
+    // Ejercicio 1 — Perfil de usuario
     val nombre = "Andres"
-    println("1) Nombre: $nombre")
+    var ciudad = "Medellín"
+    println("1) Nombre: $nombre ciudad: $ciudad")
+    ciudad = "Bogotá"
+    println("   Ciudad nueva: $ciudad")
 
-    // Ejercicio 2
-    var edad = 24
-    println("2) Edad inicial: $edad")
-    edad += 1
-    println("   Edad actualizada: $edad")
+    // Ejercicio 2 — Calculadora de años (constante año de nacimiento → edad)
+    val edadAproximada = ANIO_ACTUAL - ANIO_NACIMIENTO
+    println("2) Año de nacimiento (constante): $ANIO_NACIMIENTO edad aproximada: $edadAproximada")
 
-    // Ejercicio 3
-    val altura = 1.72
-    val peso = 68.5
-    println("3) Altura: $altura m, Peso: $peso kg")
+    // Ejercicio 3 — Tipos explícitos
+    val precioCoche: Double = 28_500.0
+    val pesoNaranja: Float = 0.18f
+    val poblacionMundo: Long = 8_119_000_000L
+    println("3) Precio coche: $precioCoche peso naranja: $pesoNaranja kg población mundo: $poblacionMundo")
 
-    // Ejercicio 4
+    // Ejercicio 4 — Inferencia (nombre requerido)
     val inicial = nombre.first()
-    val esMayorDeEdad = edad >= 18
-    println("4) Inicial: $inicial, Mayor de edad?: $esMayorDeEdad")
+    val estaLloviendo = false
+    println("4) Inicial: $inicial esta lloviendo: $estaLloviendo")
 
-    // Ejercicio 5
-    val anioNacimientoAprox = 2026 - edad
-    println("5) Año de nacimiento aproximado: $anioNacimientoAprox")
+    // Ejercicio 5 — Constantes (objeto + const val)
+    println("5) Velocidad de la luz: ${Constants.VELOCIDAD_LUZ} m/s")
 }
