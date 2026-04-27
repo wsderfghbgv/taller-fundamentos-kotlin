@@ -4,7 +4,7 @@ Proyecto del taller con 30 ejercicios organizados por bloques tematicos.
 
 ## Estudiante
 
-- Nombre completo: Andres (actualiza con tus apellidos)
+- Nombre completo: Andres narvaez
 
 ## Estructura del proyecto
 
